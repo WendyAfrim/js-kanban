@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  www:
+    image: php:7.4.30-apache
+    container_name: www_kanban
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www
+    restart: always

@@ -12,46 +12,55 @@
 </head>
 <body>
 <div class="container">
-    <div class="kanban-column">
-        <div class="kanban-title">
-            <h1>A planifier</h1>
-        </div>
-            <div class="kanban-items">
-                <div class="item-input"></div>
-                <div class="kanban-dropzone"></div>
+
+    <div id="kanban" class="hide">
+            <div class="kanban-column">
+                <div class="kanban-title">
+                    <h1>A planifier</h1>
+                </div>
+                <div class="kanban-items">
+                    <div class="item-input"></div>
+                    <div class="kanban-dropzone"></div>
+                </div>
+                <button class="add-item">Ajouter</button>
             </div>
-            <button class="add-item">Ajouter</button>
-    </div>
-    <div class="kanban-column">
-        <div class="kanban-title">
-            <h1>En cours</h1>
-        </div>
-            <div class="kanban-items">
-                <div class="item-input"></div>
-                <div class="kanban-dropzone"></div>
+            <div class="kanban-column">
+                <div class="kanban-title">
+                    <h1>En cours</h1>
+                </div>
+                <div class="kanban-items">
+                    <div class="item-input"></div>
+                    <div class="kanban-dropzone"></div>
+                </div>
+                <button class="add-item">Ajouter</button>
             </div>
-            <button class="add-item">Ajouter</button>
-    </div>
-    <div class="kanban-column">
-        <div class="kanban-title">
-            <h1>A venir</h1>
-        </div>
-            <div class="kanban-items">
-                <div class="item-input"></div>
-                <div class="kanban-dropzone"></div>
+            <div class="kanban-column">
+                <div class="kanban-title">
+                    <h1>A venir</h1>
+                </div>
+                <div class="kanban-items">
+                    <div class="item-input"></div>
+                    <div class="kanban-dropzone"></div>
+                </div>
+                <button class="add-item">Ajouter</button>
             </div>
-            <button class="add-item">Ajouter</button>
-    </div>
-    <div class="kanban-column">
-        <div class="kanban-title">
-            <h1>Fait</h1>
-        </div>
-            <div class="kanban-items">
-                <div class="item-input"></div>
-                <div class="kanban-dropzone"></div>
+            <div class="kanban-column">
+                <div class="kanban-title">
+                    <h1>Fait</h1>
+                </div>
+                <div class="kanban-items">
+                    <div class="item-input"></div>
+                    <div class="kanban-dropzone"></div>
+                </div>
+                <button class="add-item">Ajouter</button>
             </div>
-            <button class="add-item">Ajouter</button>
     </div>
+
+    <div id="tasks" class="hide">
+        <input type="text" id="task-input" placeholder="Ajouter une tâche">
+        <button id="add-task">Ajouter</button>
+    </div>
+
 </div>
 </body>
 </html>
