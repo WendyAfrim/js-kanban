@@ -1,13 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./kanban.js"></script>
-    <title>Kanban</title>
+    <meta charset="utf-8">
+    <title>Projet Kanban</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+<div class="container">
+    <div class="kanban-column">
+        <div class="kanban-title">
+            <h1>A planifier</h1>
+        </div>
+            <div class="kanban-items">
+                <div class="item-input"></div>
+                <div class="kanban-dropzone"></div>
+            </div>
+            <button class="add-item">Ajouter</button>
+    </div>
+    <div class="kanban-column">
+        <div class="kanban-title">
+            <h1>En cours</h1>
+        </div>
+            <div class="kanban-items">
+                <div class="item-input"></div>
+                <div class="kanban-dropzone"></div>
+            </div>
+            <button class="add-item">Ajouter</button>
+    </div>
+    <div class="kanban-column">
+        <div class="kanban-title">
+            <h1>A venir</h1>
+        </div>
+            <div class="kanban-items">
+                <div class="item-input"></div>
+                <div class="kanban-dropzone"></div>
+            </div>
+            <button class="add-item">Ajouter</button>
+    </div>
+    <div class="kanban-column">
+        <div class="kanban-title">
+            <h1>Fait</h1>
+        </div>
+            <div class="kanban-items">
+                <div class="item-input"></div>
+                <div class="kanban-dropzone"></div>
+            </div>
+            <button class="add-item">Ajouter</button>
+    </div>
+</div>
 </body>
 </html>
