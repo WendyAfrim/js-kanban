@@ -1,4 +1,4 @@
-import pattern from "./routes";
+import pattern from "./routes.js";
 class Api
 {
 

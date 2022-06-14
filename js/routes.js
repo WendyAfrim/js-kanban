@@ -1,6 +1,7 @@
 const pattern = new URLPattern({
-    hostname: 'http://localhost:*',
-    pathname: '/(tasks|kanban|members|tasks:*)'
-})
+    hostname: 'localhost',
+    port: 8000,
+    pathname: '/tasks/'
+});
 
 export default pattern;
