@@ -10,6 +10,12 @@ body {
     background: cadetblue;
     border-radius: 5px;
     font-family: sans-serif;
+    margin-top: 4em;
+}
+
+.kanban{
+    display: flex;
+    flex: 1;
 }
 
 .kanban-column
