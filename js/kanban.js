@@ -1,4 +1,3 @@
-import pattern from "./routes.js";
 class Api
 {
 
