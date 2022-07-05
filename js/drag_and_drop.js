@@ -1,49 +1,20 @@
 // DRAG & DROP 
 
-const taskFill = document.querySelector('.taskfill');
-const column = document.querySelectorAll('.kanban-column');
-
-taskFill.addEventListener('dragstart', dragStart); 
-taskFill.addEventListener('dragend', dragEnd); 
-
-function dragStart(){
-    this.className += 'hold'; //tenir
-
-    setTimeout(() =>(this.className = 'invisible'),0); 
+function start(e){
+    e.dataTransfer.effectAllowed = 'move'; // permet de déplacer l'élément
+    e.dataTransfer.setData("text",e.target.getAttribute('id')); //
 }
 
-function dragEnd(){
-    this.className = 'taskFill'
+function over(){
+    return false; // permet de ne pas déplacer l'élément
 }
 
-//on itérer a travers chaque element de column on leurs definit quelques choses
-for (const empty of column){
-
-    empty.addEventListener('dragover', dragOver); // prendre l'élément 
-    empty.addEventListener('dragenter', dragEnter); // enter dans un élément 
-    empty.addEventListener('dragleave', dragLeave); // leave un élément (partir) 
-    empty.addEventListener('dragdrop', dragDrop); // Lache l'élément 
-}
-// e = enleve les actions par défaut
-function dragOver(e) {
-    e.preventDefault()
-    console.log("over");
+function drop(e){
+    drag=e.dataTransfer.getData("text"); // récupère l'id de l'élément à déplacer
+    e.currentTarget.appendChild(document.getElementById(drag)); // ajoute l'élément à la zone de drop
+    e.stopPropagation(); // brise le flux de l'événement 
+    return false; 
 }
 
-function dragEnter(e) {
-    e.preventDefault()
-    console.log("enter");
-   // this.className += 'hovered' // fait apparaitre des traits 
-}
 
-function dragLeave(e) {
-    console.log("leave");
-    //this.className = 'column';
-}
-
-function dragDrop(e) {
-    // this.className = 'taskfill';
-    //this.append(taskFill);
-    console.log("drop");
-
-}
+// changer l'id en classe et faire une boucle for pour les éléments 
