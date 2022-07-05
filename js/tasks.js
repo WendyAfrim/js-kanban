@@ -22,6 +22,7 @@ export let tasks = () => {
     self.addTaskToSession = (task) => {
         Api.insertTicket('to_plan', task);
         self.injectTaskInToPlanColumn(task);
+        self.injectTaskInItemsList(task);
     }
 
     self.injectTaskInToPlanColumn = (task) => {
@@ -35,6 +36,16 @@ export let tasks = () => {
         element.innerHTML = task;
 
         kanbanItems.appendChild(element);
+    }
+
+    self.injectTaskInItemsList = (task) => {
+
+        let itemsList = document.querySelector('.items-list');
+
+        let element = document.createElement('li');
+        element.innerHTML = task;
+
+        itemsList.appendChild(element);
     }
 
     return self;
