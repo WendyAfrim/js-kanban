@@ -1,5 +1,6 @@
 export default class Api
 {
+
     static getTickets(ticket_id) {
         let tickets = readSession();
 
@@ -11,9 +12,9 @@ export default class Api
         return existing_tickets;
     }
 
-    static insertTicket(column_id, content) {
+    static insertTicket(column_status, content) {
         let columns = readSession();
-        let column = columns.find(column => column.id === column_id);
+        let column = columns.find(column => column.status === column_status);
 
         let ticket = {
             id : Math.floor(Math.random() * 100000),
@@ -45,7 +46,7 @@ function readSession()
         return [
             {
                 id : 1,
-                status : 'to_do',
+                status : 'to_plan',
                 tickets : []
             },
             {

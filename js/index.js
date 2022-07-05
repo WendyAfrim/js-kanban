@@ -1,3 +1,2 @@
-import Api from "./kanban.js";
-
-console.log(Api.insertTicket(1, 'I am new!'));
+import {tasks} from "./tasks.js";
+tasks().init();
