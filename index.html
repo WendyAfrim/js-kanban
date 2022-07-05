@@ -26,21 +26,21 @@
                         <div class="kanban-title" >
                             <p>A PLANIFIER</p>
                         </div>
-                            <div class="draggable" id="drag" draggable="true">ajouter une tâche</div>
+                            <div class="draggable" class="drag" draggable="true">ajouter une tâche</div>
                     </div>
                    
-                    <div class="kanban-column" onDragStart="start(event)" onDragOver="return over()" onDrop="return drop(event)">
+                    <div class="kanban-column" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
                         <div class="kanban-title">
                             <p>EN COURS</p>
                         </div>
                             
                     </div>
-                    <div class="kanban-column" onDragStart="start(event)" onDragOver="return over()" onDrop="return drop(event)">
+                    <div class="kanban-column" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
                         <div class="kanban-title">
                             <p>A VENIR</p>
                         </div>
                     </div>
-                    <div class="kanban-column" onDragStart="start(event)" onDragOver="return over()" onDrop="return drop(event)">
+                    <div class="kanban-column" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
                         <div class="kanban-title">
                             <p>FAIT</p>
                         </div>
