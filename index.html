@@ -47,21 +47,59 @@
                     </div>
             </div>
 
-            <div id="tasks" class="page hide">
+            <div id="tasks" class="page">
                 <input type="text" id="task-input" placeholder="Ajouter une tâche">
                 <button id="add-task">Ajouter</button>
+
+                <h2>Added tasks:</h2>
+                <ul class="items-list"></ul>
             </div>
 
-            <div id="members" class="page hide">
-                <input type="text" id="member-input" placeholder="Ajouter un membre">
-                <button id="add-member">Ajouter</button>
+            <div id="members" class="page">
+                <form id="myform" onsubmit="return addUser()">
+                    <h2>Add a member:</h2>
+                    <div>
+                        <input type="text" name="name" class="member-input" id="name" placeholder="Name" required>
+                        <br/>
+                        <input type="text" name="surname" class="member-input" id="surname" placeholder="Surname" required>
+                        <br/>
+                        <input type="email" name="email" class="member-input" id="email" placeholder="E-mail address" required>
+                        <br/>
+                        <input type="text" name="post" class="member-input" id="post" placeholder="Post" required>
+                    </div>
+                    <button id="add-member">Add</button>
+                </form>
+                        
+                <h2>Added members:</h2>
+                <ul id="members" class="members-list"></ul>
+
+                <!-- <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>E-mail address</th>
+                        <th>Post</th>
+                    </tr>
+        
+                    <tr>
+                        <td id="name"></td>
+                        <td id="surname"></td>
+                        <td id="e-mail"></td>
+                        <td id="post"></td>
+                    </tr>
+        
+                </table> -->
             </div>
             
-            <div id="task-edit" class="page hide">
+
+            
+            <div id="task-edit" class="page">
                 <input type="text" id="task-edit-input" placeholder="Ajouter une tâche">
                 <button id="add-task-edit">Ajouter</button>
             </div>
         </div>
-        <ul class="items-list"></ul>
+
+
+        <script src="js/members.js" type="text/javascript"></script>
     </body>
 </html>
