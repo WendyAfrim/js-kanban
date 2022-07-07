@@ -68,6 +68,10 @@ body {
     padding: 5px;
 }
 
+.add-task-member {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+}
 
 .hide {
     display: none;
