@@ -47,21 +47,47 @@
                     </div>
             </div>
 
-            <div id="tasks" class="page hide">
+            <div id="tasks" class="page">
+                <h2 class="add-task-member">Tasks</h2>
+
                 <input type="text" id="task-input" placeholder="Ajouter une tâche">
                 <button id="add-task">Ajouter</button>
+
+                <ul class="items-list"></ul>
             </div>
 
-            <div id="members" class="page hide">
-                <input type="text" id="member-input" placeholder="Ajouter un membre">
-                <button id="add-member">Ajouter</button>
+            <div id="members" class="page">
+                <h2 class="add-task-member">Members</h2>
+                <div>
+                    <input type="text" name="name" class="member-input" id="name" placeholder="Name" required>
+                    <br/>
+                    <input type="text" name="surname" class="member-input" id="surname" placeholder="Surname" required>
+                    <br/>
+                    <input type="email" name="email" class="member-input" id="email" placeholder="E-mail address" required>
+                    <br/>
+                    <input type="text" name="post" class="member-input" id="post" placeholder="Post" required>
+                </div>
+                <button id="add-member">Add</button>
+
+                <br/>
+
+                <table id="members-table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>E-mail address</th>
+                        <th>Post</th>
+                    </tr>
+                </table>
+
+
             </div>
-            
-            <div id="task-edit" class="page hide">
+                       
+            <div id="task-edit" class="page">
                 <input type="text" id="task-edit-input" placeholder="Ajouter une tâche">
                 <button id="add-task-edit">Ajouter</button>
             </div>
         </div>
-        <ul class="items-list"></ul>
+
     </body>
 </html>
