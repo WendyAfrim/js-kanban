@@ -33,6 +33,15 @@ export let tasks = () => {
         element.classList.add('draggable');
         element.setAttribute('draggable', 'true');
 
+        element.addEventListener('click', (event) => {
+            let txt = event.target.innerText;
+            navigator.clipboard.writeText(txt).then(() => {
+                console.log('Copied to clipboard');
+            }).catch(err => {
+                console.error('Failed to copy!', err);
+            });
+        });
+
         element.innerHTML = task;
 
         kanbanItems.appendChild(element);
