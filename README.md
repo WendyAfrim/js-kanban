@@ -8,7 +8,7 @@ destination des entreprises afin de les aider dans leur gestion quotidienne.
 
 ## Fonctionnalités
 
-- Il doit être possible de se déplacer sur toutes les pages sans recharger le navigateur
+- [X] ~~Il doit être possible de se déplacer sur toutes les pages sans recharger le navigateur~~
 
 - Une page “/tasks” doit permettre de lister l’ensemble des tâches à ajouter au projet
 
@@ -26,9 +26,9 @@ destination des entreprises afin de les aider dans leur gestion quotidienne.
 
 - Les tâches de la page “/kanban” doivent pouvoir être déplacées avec un système de drag & drop
 
-- L’état complet de l’application (membres, tâches, répartition Kanban) doit être sauvegardé
+- [X] ~~L’état complet de l’application (membres, tâches, répartition Kanban) doit être sauvegardé
   dans le stockage du navigateur pour pouvoir y accéder malgré un rechargement ou une fermeture
-  de session de navigation
+  de session de navigation~~
 
 - Une page “/tasks/:task” doit permettre de pouvoir modifier une tâche créé, l’identifiant
   “:task” est dynamique et prend l’identifiant d’une tâche
