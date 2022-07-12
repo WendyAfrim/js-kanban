@@ -8,25 +8,26 @@ export let tasks = () => {
     }
 
     self.targetBtnAddTasks = () => {
+        document.querySelectorAll('.add-task').forEach((btnAddTask) => {
+            btnAddTask.addEventListener('click', (event) => {
+                let column = event.target.dataset.column;
+                let items = btnAddTask.closest('.kanban-items');
 
-        document.getElementById('add-task').addEventListener('click', (event) => {
-            self.getInputValue();
+                let task = items.querySelector('input').value;
+
+                self.addTaskToSession(column, task);
+            })
         })
     }
 
-    self.getInputValue = () => {
-        let task = document.getElementById('task-input').value;
-        self.addTaskToSession(task);
+    self.addTaskToSession = (column, task) => {
+        Api.insertTicket(column, task);
+        self.injectTaskInRightColumn(column, task);
     }
 
-    self.addTaskToSession = (task) => {
-        Api.insertTicket('to_plan', task);
-        self.injectTaskInToPlanColumn(task);
-        self.injectTaskInItemsList(task);
-    }
-
-    self.injectTaskInToPlanColumn = (task) => {
-        let kanbanItems = document.querySelector('.kanban-items');
+    self.injectTaskInRightColumn = (column, task) => {
+        let targetColumn = '.' + column;
+        let domColumn = document.querySelector(targetColumn);
 
         let element = document.createElement('div');
         element.classList.add('drag');
@@ -44,17 +45,7 @@ export let tasks = () => {
 
         element.innerHTML = task;
 
-        kanbanItems.appendChild(element);
-    }
-
-    self.injectTaskInItemsList = (task) => {
-
-        let itemsList = document.querySelector('.items-list');
-
-        let element = document.createElement('li');
-        element.innerHTML = task;
-
-        itemsList.appendChild(element);
+        domColumn.appendChild(element);
     }
 
     return self;

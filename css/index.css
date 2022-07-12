@@ -1,3 +1,7 @@
+*, nav {
+    font-family: Arial;
+}
+
 body {
     box-sizing: border-box;
 }
@@ -7,7 +11,6 @@ body {
 }
 .nav .link{
     color: white;
-    font-family: 'Fredoka One', cursive;
     text-decoration: none;
     padding: 10px;
     font-size: 20px;
@@ -52,7 +55,6 @@ body {
 
 .kanban-title
 {
-    font-family: 'Fredoka One', cursive;
     background-color:#426e6f;
     text-align: center;
     border-radius:5px 5px 0 0;
@@ -68,9 +70,12 @@ body {
     padding: 5px;
 }
 
+.kanban-items {
+    padding-top: 0.8em;
+}
+
 .add-task-member {
     color: white;
-    font-family: 'Fredoka One', cursive;
 }
 
 .hide {

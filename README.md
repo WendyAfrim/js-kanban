@@ -10,21 +10,21 @@ destination des entreprises afin de les aider dans leur gestion quotidienne.
 
 - [X] ~~Il doit être possible de se déplacer sur toutes les pages sans recharger le navigateur~~
 
-- Une page “/tasks” doit permettre de lister l’ensemble des tâches à ajouter au projet
+- [X] Une page “/tasks” doit permettre de lister l’ensemble des tâches à ajouter au projet
 
 - La page “/kanban” doit permettre d’ajouter des tâches dans 4 colonnes : à planifier, en
   cours, à valider, fait
 
-- Les tâches qui sont dans la liste “/tasks” doivent apparaître dans la liste “à planifier"
+- [X] Les tâches qui sont dans la liste “/tasks” doivent apparaître dans la liste “à planifier"
   dans la page “/kanban”
 
 - Les tâches qui sont dans la colonne “en cours”, “à valider” ou “fait” ne doivent plus
   apparaître dans la liste des tâches de la page “/tasks”
 
-- Une page “/members” doit pouvoir permettre d’ajouter des membres avec un nom, un prénom, une
+-[X] Une page “/members” doit pouvoir permettre d’ajouter des membres avec un nom, un prénom, une
   adresse email et un poste professionnel
 
-- Les tâches de la page “/kanban” doivent pouvoir être déplacées avec un système de drag & drop
+- [X] Les tâches de la page “/kanban” doivent pouvoir être déplacées avec un système de drag & drop
 
 - [X] ~~L’état complet de l’application (membres, tâches, répartition Kanban) doit être sauvegardé
   dans le stockage du navigateur pour pouvoir y accéder malgré un rechargement ou une fermeture
@@ -33,13 +33,13 @@ destination des entreprises afin de les aider dans leur gestion quotidienne.
 - Une page “/tasks/:task” doit permettre de pouvoir modifier une tâche créé, l’identifiant
   “:task” est dynamique et prend l’identifiant d’une tâche
 
-- Le site doit être responsive (mobile, tablette, bureau)
+- [X] Le site doit être responsive (mobile, tablette, bureau)
 
-- Déplacer une tâche doit faire vibrer l’appareil
+- [X] Déplacer une tâche doit faire vibrer l’appareil
 
 - Les tâches doivent être synchronisées entre onglets si plusieurs onglets sont ouverts
 
-- Un bouton doit permettre de copier le contenu d’une tâche dans le press-papier
+- [X] Un bouton doit permettre de copier le contenu d’une tâche dans le press-papier
 
 ## Contraintes :
 
