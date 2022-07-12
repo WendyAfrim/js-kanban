@@ -15,6 +15,7 @@ function over(e){
 }
 
 function drop(e){
+    window.navigator.vibrate(200); // vibrer l'appareil
     drag=e.dataTransfer.getData("text"); // récupère la class de l'élément à déplacer
      // ajoute l'élément à la zone de drop
      e.target.appendChild(document.getElementsByClassName(drag)[0]); // récupère l'élément à déplacer
