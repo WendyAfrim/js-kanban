@@ -30,15 +30,10 @@ export let tasks = () => {
 
                 let column = kanbanColumn.dataset.column;
                 let task = kanbanColumn.querySelector('input').value;
-                self.injectTaskInRightColumn(column, task, counter);
-               self.addTaskToSession(column, task);
+
+                self.injectTaskInRightColumn(column, task, counter)
             })
         })
-    }
-
-    self.addTaskToSession = (column, task) => {
-        let taskObject = Api.insertTicket(column, task);
-        self.injectTaskInRightColumn(column, taskObject);
     }
 
     self.injectTaskInRightColumn = (column, task, counter) => {
@@ -52,26 +47,20 @@ export let tasks = () => {
         element.setAttribute('draggable', 'true');
         element.setAttribute('ondragstart', 'onDragStart(event);');
 
-        element.innerHTML = `
-            <span id="${taskObject.id}">${taskObject.content}</span>
-            <a href="/task/edit" data-task-id="${taskObject.id}" data-task-content="${taskObject.content}" class="editTask"> Edit </a>
-            <a href="#" class="copy-task"> Copy </a>
-        `;
+        element.addEventListener('click', (event) => {
+            let txt = event.target.innerText;
+            navigator.clipboard.writeText(txt).then(() => {
+                console.log('Copied to clipboard');
+            }).catch(err => {
+                console.error('Failed to copy!', err);
+            });
+        });
+
+        element.innerHTML = task;
         domColumn.appendChild(element);
 
         Api.insertTicketInSession(column, task, element.id);
 
-        for (let i = 0; i < document.getElementsByClassName('copy-task').length; i++) {
-            let copyTask = document.getElementsByClassName('copy-task')[i];
-
-            copyTask.addEventListener('click', (event) => {
-                navigator.clipboard.writeText(taskObject.content).then(() => {
-                    console.log('Copied to clipboard');
-                }).catch(err => {
-                    console.error('Failed to copy!', err);
-                });
-            });
-        }
     }
 
     return self;
