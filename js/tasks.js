@@ -2,6 +2,7 @@ import Api from "./kanban.js";
 
 export let tasks = () => {
     let self = {};
+    let counter = 0;
 
     self.init = () => {
         self.targetBtnAddTasks();
@@ -24,29 +25,32 @@ export let tasks = () => {
     self.targetBtnAddTasks = () => {
         document.querySelectorAll('.add-task').forEach((btnAddTask) => {
             btnAddTask.addEventListener('click', (event) => {
+                counter++;
                 let column = event.target.dataset.column;
                 let items = btnAddTask.closest('.kanban-items');
 
                 let task = items.querySelector('input').value;
 
                 self.addTaskToSession(column, task);
+                self.injectTaskInRightColumn(column, task, counter)
             })
         })
     }
 
-    self.addTaskToSession = (column, task) => {
+    self.addTaskToSession = (column, task, ) => {
         Api.insertTicket(column, task);
-        self.injectTaskInRightColumn(column, task);
     }
 
-    self.injectTaskInRightColumn = (column, task) => {
+    self.injectTaskInRightColumn = (column, task, counter) => {
         let targetColumn = '.' + column;
         let domColumn = document.querySelector(targetColumn);
 
         let element = document.createElement('div');
+        element.setAttribute('id', 'draggable'+ counter);
         element.classList.add('drag');
         element.classList.add('draggable');
         element.setAttribute('draggable', 'true');
+        element.setAttribute('ondragstart', 'onDragStart(event);');
 
         element.addEventListener('click', (event) => {
             let txt = event.target.innerText;
