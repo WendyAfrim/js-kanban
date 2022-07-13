@@ -21,7 +21,7 @@ destination des entreprises afin de les aider dans leur gestion quotidienne.
 - [X] Les tâches qui sont dans la colonne “en cours”, “à valider” ou “fait” ne doivent plus
   apparaître dans la liste des tâches de la page “/tasks”
 
--[X] Une page “/members” doit pouvoir permettre d’ajouter des membres avec un nom, un prénom, une
+- [X] Une page “/members” doit pouvoir permettre d’ajouter des membres avec un nom, un prénom, une
   adresse email et un poste professionnel
 
 - [X] Les tâches de la page “/kanban” doivent pouvoir être déplacées avec un système de drag & drop
