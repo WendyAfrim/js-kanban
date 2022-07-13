@@ -28,14 +28,9 @@ export let tasks = () => {
                 counter++;
                 let kanbanColumn = btnAddTask.closest('.kanban-column');
 
-<<<<<<< HEAD
                 let column = kanbanColumn.dataset.column;
                 let task = kanbanColumn.querySelector('input').value;
                 self.injectTaskInRightColumn(column, task, counter);
-=======
-                let task = items.querySelector('input').value;
-
->>>>>>> d6f7c7ed370374fe91fe004cf4e719a6b5493b37
                self.addTaskToSession(column, task);
             })
         })
