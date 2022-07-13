@@ -16,7 +16,7 @@
 
         <nav class="nav">
             <a class="link" href="/">HOME</a>
-            <a class="link" href="/tasks">TASKS</a>
+            <a class="link" id="task_link" href="/tasks">TASKS</a>
             <a class="link" href="/members">MEMBERS</a>
         </nav>
 
@@ -24,7 +24,7 @@
             <div id="kanban" class="kanban page">
                     <div class="kanban-column" onDragStart="start(event)">
                         <div class="kanban-title">
-                            <p>A PLANIFIER</p>
+                            <p>TO DO</p>
                         </div>
                         <div class="kanban-items" draggable=true>
                             <input type="text" placeholder="Ajouter une tâche">
@@ -35,7 +35,7 @@
                    
                     <div class="kanban-column" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
                         <div class="kanban-title">
-                            <p>EN COURS</p>
+                            <p>IN PROGRESS</p>
                         </div>
                         <div class="kanban-items" draggable=true>
                             <input type="text" placeholder="Ajouter une tâche">
@@ -45,7 +45,7 @@
                     </div>
                     <div class="kanban-column" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
                         <div class="kanban-title">
-                            <p>A VENIR</p>
+                            <p>REVIEW</p>
                         </div>
                         <div class="kanban-items" draggable=true>
                             <input type="text" placeholder="Ajouter une tâche">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="kanban-column" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
                         <div class="kanban-title">
-                            <p>FAIT</p>
+                            <p>DONE</p>
                         </div>
                         <div class="kanban-items" draggable=true>
                             <input type="text" placeholder="Ajouter une tâche">
@@ -67,7 +67,6 @@
 
             <div id="tasks" class="page hide">
                 <h2 class="task-title">Tasks</h2>
-
                 <ul class="items-list"></ul>
             </div>
 
