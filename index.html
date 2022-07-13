@@ -22,44 +22,44 @@
 
         <div class="container-kanban">
             <div id="kanban" class="kanban page">
-                    <div class="kanban-column">
+                    <div class="kanban-column" data-column="to_plan">
                         <div class="kanban-title">
                             <p>TO DO</p>
                         </div>
                         <div class="kanban-items">
                             <input type="text" placeholder="Ajouter une tâche">
-                            <button class="add-task" data-column="to_plan">Add</button>
+                            <button class="add-task">Add</button>
                             <div class="to_plan"></div>
                         </div>
                     </div>
                    
-                    <div class="kanban-column" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+                    <div class="kanban-column" ondragover="onDragOver(event)" ondrop="onDrop(event)" data-column="in_progress">
                         <div class="kanban-title">
                             <p>IN PROGRESS</p>
                         </div>
                         <div class="kanban-items">
                             <input type="text" placeholder="Ajouter une tâche">
-                            <button class="add-task" data-column="in_progress">Add</button>
+                            <button class="add-task">Add</button>
                             <div class="in_progress"></div>
                         </div>
                     </div>
-                    <div class="kanban-column" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+                    <div class="kanban-column" ondragover="onDragOver(event)" ondrop="onDrop(event)" data-column="to_come">
                         <div class="kanban-title">
                             <p>REVIEW</p>
                         </div>
                         <div class="kanban-items">
                             <input type="text" placeholder="Ajouter une tâche">
-                            <button class="add-task" data-column="to_come">Add</button>
+                            <button class="add-task">Add</button>
                             <div class="to_come"></div>
                         </div>
                     </div>
-                    <div class="kanban-column" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+                    <div class="kanban-column" ondragover="onDragOver(event)" ondrop="onDrop(event)" data-column="done">
                         <div class="kanban-title">
                             <p>DONE</p>
                         </div>
                         <div class="kanban-items">
                             <input type="text" placeholder="Ajouter une tâche">
-                            <button class="add-task" data-column="done">Add</button>
+                            <button class="add-task">Add</button>
                             <div class="done"></div>
                         </div>
                     </div>

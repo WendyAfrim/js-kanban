@@ -26,19 +26,14 @@ export let tasks = () => {
         document.querySelectorAll('.add-task').forEach((btnAddTask) => {
             btnAddTask.addEventListener('click', (event) => {
                 counter++;
-                let column = event.target.dataset.column;
-                let items = btnAddTask.closest('.kanban-items');
+                let kanbanColumn = btnAddTask.closest('.kanban-column');
 
-                let task = items.querySelector('input').value;
+                let column = kanbanColumn.dataset.column;
+                let task = kanbanColumn.querySelector('input').value;
 
-                self.addTaskToSession(column, task);
                 self.injectTaskInRightColumn(column, task, counter)
             })
         })
-    }
-
-    self.addTaskToSession = (column, task, ) => {
-        Api.insertTicket(column, task);
     }
 
     self.injectTaskInRightColumn = (column, task, counter) => {
@@ -62,8 +57,10 @@ export let tasks = () => {
         });
 
         element.innerHTML = task;
-
         domColumn.appendChild(element);
+
+        Api.insertTicketInSession(column, task, element.id);
+
     }
 
     return self;
