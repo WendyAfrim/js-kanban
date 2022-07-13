@@ -24,9 +24,15 @@ document.addEventListener('click', (event) => {
     }
 
     if (event.target.matches('.editTask')) {
-        document.getElementById('task-edit-input').value = event.target.getAttribute('value');
+        let content = event.target.getAttribute('data-task-content');
+        let id = event.target.getAttribute('data-task-id');
+
+        document.getElementById('task-edit-input').value = content;
                 
         document.getElementById('btn-edit-task').addEventListener('click', (event) => {
+
+            document.getElementById(id).innerText = document.getElementById('task-edit-input').value;
+            event.target.setAttribute('data-task-content', document.getElementById('task-edit-input').value);
             urlRoute('/');
         });
     }
