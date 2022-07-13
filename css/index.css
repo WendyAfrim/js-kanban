@@ -18,8 +18,9 @@ body {
 }
 
 .draggable{
-    background-color: red;
+    background-color: white;
     cursor: move;
+    margin-top: 1em;
 }
 
 .container-kanban {
