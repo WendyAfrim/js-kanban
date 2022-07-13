@@ -5,6 +5,20 @@ export let tasks = () => {
 
     self.init = () => {
         self.targetBtnAddTasks();
+
+        let taskLink = document.getElementById('task_link');
+        taskLink.addEventListener('click', self.syncWithTaskList);
+    }
+
+    self.syncWithTaskList = () => {
+        let toDoList = document.querySelector('.to_plan').children;
+        let itemsList = document.querySelector('.items-list');
+        itemsList.innerHTML = '';
+        for (let i = 0; i < toDoList.length; i++){
+            let element = document.createElement('li');
+            element.innerHTML = toDoList[i].innerText;    
+            itemsList.appendChild(element);
+        }
     }
 
     self.targetBtnAddTasks = () => {
