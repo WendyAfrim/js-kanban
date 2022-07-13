@@ -7,7 +7,7 @@ const routes = {
         name: 'tasks',
         title: 'Project Kanban : Tasks'
     },
-    '/tasks/:id': {
+    '/task/edit': {
         name: 'task-edit',
         title: 'Project Kanban : Task Edit'
     },
@@ -19,17 +19,29 @@ const routes = {
 
 document.addEventListener('click', (event) => {
 
-    if (!event.target.matches('nav a')) {
+    if (!event.target.matches('a')) {
         return;
+    }
+
+    if (event.target.matches('.editTask')) {
+        document.getElementById('task-edit-input').value = event.target.getAttribute('value');
+                
+        document.getElementById('btn-edit-task').addEventListener('click', (event) => {
+            urlRoute('/');
+        });
     }
 
     urlRoute();
 });
 
-const urlRoute = () => {
+const urlRoute = (pathname = null) => {
     let event = window.event;
     event.preventDefault();
-    window.history.pushState({}, '', event.target.href);
+    if (pathname) {
+        window.history.pushState({}, '', pathname);
+    } else {
+        window.history.pushState({}, '', event.target.href);
+    }
     urlLocationHandler();
 }
 

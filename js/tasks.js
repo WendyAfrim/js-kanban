@@ -47,16 +47,16 @@ export let tasks = () => {
         element.setAttribute('draggable', 'true');
         element.setAttribute('ondragstart', 'onDragStart(event);');
 
-        element.addEventListener('click', (event) => {
-            let txt = event.target.innerText;
-            navigator.clipboard.writeText(txt).then(() => {
+        /*element.addEventListener('click', (event) => {
+            navigator.clipboard.writeText(task).then(() => {
                 console.log('Copied to clipboard');
             }).catch(err => {
                 console.error('Failed to copy!', err);
             });
-        });
+        });*/
 
-        element.innerHTML = task;
+        element.innerHTML = task+ '<a href="/task/edit" value="'+task+'" class="editTask"> Edit </a>';
+
         domColumn.appendChild(element);
 
         Api.insertTicketInSession(column, task, element.id);
