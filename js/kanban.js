@@ -12,12 +12,12 @@ export default class Api
         return existing_tickets;
     }
 
-    static insertTicket(column_status, content) {
+    static insertTicketInSession(column_status, content, id) {
         let columns = readSession();
         let column = columns.find(column => column.status === column_status);
 
         let ticket = {
-            id : Math.floor(Math.random() * 100000),
+            id : id,
             content : content
         }
 
@@ -33,6 +33,14 @@ export default class Api
 
     static updateTicket(ticket_id, update){
         let columns = readSession();
+
+        for (const column of columns) {
+            const ticket = column.tickets.find(ticket => ticket.id === ticket_id);
+
+            if(ticket) {
+                return [item, column];
+            }
+        }
     }
 
 
