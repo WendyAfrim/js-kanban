@@ -144,3 +144,13 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+
+  ul {
+    list-style: none;
+  }
+
+  li{
+    color: #dddddd;
+  }
+
+  
