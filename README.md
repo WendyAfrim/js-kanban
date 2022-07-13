@@ -12,13 +12,13 @@ destination des entreprises afin de les aider dans leur gestion quotidienne.
 
 - [X] Une page “/tasks” doit permettre de lister l’ensemble des tâches à ajouter au projet
 
-- La page “/kanban” doit permettre d’ajouter des tâches dans 4 colonnes : à planifier, en
+- [X] La page “/kanban” doit permettre d’ajouter des tâches dans 4 colonnes : à planifier, en
   cours, à valider, fait
 
 - [X] Les tâches qui sont dans la liste “/tasks” doivent apparaître dans la liste “à planifier"
   dans la page “/kanban”
 
-- Les tâches qui sont dans la colonne “en cours”, “à valider” ou “fait” ne doivent plus
+- [X] Les tâches qui sont dans la colonne “en cours”, “à valider” ou “fait” ne doivent plus
   apparaître dans la liste des tâches de la page “/tasks”
 
 -[X] Une page “/members” doit pouvoir permettre d’ajouter des membres avec un nom, un prénom, une
