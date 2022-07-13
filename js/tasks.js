@@ -29,17 +29,17 @@ export let tasks = () => {
 
                 let task = items.querySelector('input').value;
 
-                self.addTaskToSession(column, task);
+               self.addTaskToSession(column, task);
             })
         })
     }
 
     self.addTaskToSession = (column, task) => {
-        Api.insertTicket(column, task);
-        self.injectTaskInRightColumn(column, task);
+        let taskObject = Api.insertTicket(column, task);
+        self.injectTaskInRightColumn(column, taskObject);
     }
 
-    self.injectTaskInRightColumn = (column, task) => {
+    self.injectTaskInRightColumn = (column, taskObject) => {
         let targetColumn = '.' + column;
         let domColumn = document.querySelector(targetColumn);
 
@@ -48,17 +48,24 @@ export let tasks = () => {
         element.classList.add('draggable');
         element.setAttribute('draggable', 'true');
 
-        /*element.addEventListener('click', (event) => {
-            navigator.clipboard.writeText(task).then(() => {
-                console.log('Copied to clipboard');
-            }).catch(err => {
-                console.error('Failed to copy!', err);
-            });
-        });*/
-
-        element.innerHTML = task+ '<a href="/task/edit" value="'+task+'" class="editTask"> Edit </a>';
-
+        element.innerHTML = `
+            <span id="${taskObject.id}">${taskObject.content}</span>
+            <a href="/task/edit" data-task-id="${taskObject.id}" data-task-content="${taskObject.content}" class="editTask"> Edit </a>
+            <a href="#" class="copy-task"> Copy </a>
+        `;
         domColumn.appendChild(element);
+
+        for (let i = 0; i < document.getElementsByClassName('copy-task').length; i++) {
+            let copyTask = document.getElementsByClassName('copy-task')[i];
+
+            copyTask.addEventListener('click', (event) => {
+                navigator.clipboard.writeText(taskObject.content).then(() => {
+                    console.log('Copied to clipboard');
+                }).catch(err => {
+                    console.error('Failed to copy!', err);
+                });
+            });
+        }
     }
 
     return self;
